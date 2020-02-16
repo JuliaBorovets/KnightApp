@@ -9,7 +9,7 @@ public class InputTextUser {
     private View view;
     private Scanner scanner;
 
-    public InputTextUser(View view, Scanner sc) {
+    public InputTextUser(View view, Scanner scanner) {
         this.view = view;
         this.scanner = scanner;
     }

@@ -9,6 +9,7 @@ public class View {
 
     public static final ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME,
             new Locale("ua", "UA"));
+  //          new Locale("en"));
 
     public void printMessage(String message){
         System.out.println(message);
