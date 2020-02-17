@@ -18,6 +18,6 @@ public class Controller {
     public void processUser() {
         Scanner sc = new Scanner(System.in);
         InputTextUser inputText = new InputTextUser(view, sc);
-        inputText.inputText();
+        inputText.choseOperation();
     }
 }
