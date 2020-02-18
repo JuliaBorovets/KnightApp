@@ -1,10 +1,7 @@
 package main.java.controller;
 
-import main.java.view.TextConstant;
 import main.java.view.View;
 
-import java.util.ArrayList;
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class InputTextUser {
@@ -28,14 +25,28 @@ public class InputTextUser {
         return res;
 
     }
-    public void choseOperation(){
-        int i = 0;
-        while (i<1 || i>5){
-            i = Integer.parseInt(inputStringValueWithScanner(TextConstant.INPUT_STRING_DATA, RegexContainer.REGEX_NUMBER));
-        }
+//    public void choseOperation(Scanner sc){
+//        inputStringValueWithScanner(TextConstant.INPUT_STRING_DATA, RegexContainer.REGEX_NUMBER);
+//        int i = 0;
+//        while (i<1 || i>5){
+//            i = Integer.parseInt(inputStringValueWithScanner(TextConstant.INPUT_STRING_DATA, RegexContainer.REGEX_NUMBER));
+//        }
 //        switch (i){
+//            case 4:
+//                chooseLanguage(sc);
+//            case 1:
 //
 //        }
+//
+//    }
 
+    public void chooseLanguage(Scanner sc) {
+        Language language;
+        for (Language option : Language.values()) {
+            view.printMessage(option.getUserPrompt());
+        }
+
+        language = (sc.nextInt() == 1) ? Language.UKRAINIAN_LANG : Language.ENGLISH_LANG;
+        view.setLocalization(language);
     }
 }
