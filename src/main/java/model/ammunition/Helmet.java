@@ -13,31 +13,16 @@ public class Helmet extends Ammunition {
         this.size = size;
     }
 
-    public boolean isCloseHelmet() {
-        return isCloseHelmet;
+    public int getResistance() {
+        return resistance;
     }
 
-    public int getCanTakeDamage() {
-        return resistance;
+    public boolean isCloseHelmet() {
+        return isCloseHelmet;
     }
 
     public String getSize() {
         return size;
     }
 
-    public void setResistance(int resistance) {
-        this.resistance = resistance;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    @Override
-    public String toString() {
-        return "Helmet " + super.toString() +
-                ", isCloseHelmet=" + isCloseHelmet +
-                ", canTakeDamage=" + resistance +
-                ", size='" + size;
-    }
 }

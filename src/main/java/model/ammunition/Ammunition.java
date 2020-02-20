@@ -2,9 +2,9 @@ package main.java.model.ammunition;
 
 public abstract class Ammunition {
 
-    public String name;
-    public double weight;
-    public double cost;
+    private String name;
+    private double weight;
+    private double cost;
 
     public Ammunition(String name, double weight, double cost) {
         this.name = name;
@@ -16,11 +16,9 @@ public abstract class Ammunition {
         return name;
     }
 
-
     public double getWeight() {
         return weight;
     }
-
 
     public double getCost() {
         return cost;
@@ -38,10 +36,5 @@ public abstract class Ammunition {
         this.cost = cost;
     }
 
-    @Override
-    public String toString() {
-        return " weight=" + weight +
-                ", cost=" + cost;
-    }
 
 }
