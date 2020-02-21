@@ -3,11 +3,24 @@ package main.java.model;
 import main.java.controller.AmmunitionEnum;
 import main.java.controller.RegexContainer;
 import main.java.model.ammunition.Ammunition;
-import java.util.*;
 
-public class Model implements Shop {
+import java.util.ArrayList;
 
-    @Override
+/**
+ * Created by Yuliia Borovets on 2020-02-21
+ *
+ * @author Yuliia Borovets
+ * @version 1.0
+ */
+
+public class Model {
+
+    /**
+     * Makes an ArrayList of Ammunition from Enum values
+     *
+     * @return ArrayList of Ammunition
+     */
+
     public ArrayList<Ammunition> getAmmunition() {
         ArrayList<Ammunition> amm = new ArrayList<>();
         for (AmmunitionEnum el : AmmunitionEnum.values()) {
@@ -24,7 +37,12 @@ public class Model implements Shop {
         return amm;
     }
 
-    @Override
+    /**
+     * Sort ArrayList of Ammunition  by "Bubble" method
+     *
+     * @param ammunition - list if ammunition
+     * @return sorted ammunition
+     */
     public ArrayList<Ammunition> sort(ArrayList<Ammunition> ammunition) {
         Ammunition temp;
         boolean hasSwapped;
@@ -45,7 +63,12 @@ public class Model implements Shop {
     }
 
 
-    @Override
+    /**
+     * Adds all the value of the ammunition
+     *
+     * @param ammunition - ArrayList of ammunition
+     * @return total cost
+     */
     public double calculateTotalPrice(ArrayList<Ammunition> ammunition) {
         double result = 0.0;
         for (Ammunition a : ammunition) {
@@ -54,8 +77,16 @@ public class Model implements Shop {
         return result;
     }
 
-    @Override
-    public ArrayList<Ammunition> getFromDiapason(ArrayList<Ammunition> ammunition, double min, double max) {
+
+    /**
+     * Method to get ammunition from a given range
+     *
+     * @param ammunition - list of ammunition
+     * @param min        - minimum value
+     * @param max        - maximum value
+     * @return ammunition from a given range
+     */
+    public ArrayList<Ammunition> getFromRange(ArrayList<Ammunition> ammunition, double min, double max) {
         ArrayList<Ammunition> result = new ArrayList<>();
         for (Ammunition a : ammunition) {
             if (a.getCost() >= 0 && a.getCost() >= min && a.getCost() <= max) {
@@ -65,7 +96,14 @@ public class Model implements Shop {
         return result;
     }
 
-    @Override
+
+    /**
+     * Method to filter ammunition by size
+     *
+     * @param ammunition - list of ammunition
+     * @param size       - the value by which to filter the ammunition
+     * @return filtered ammunition
+     */
     public ArrayList<Ammunition> chooseSize(ArrayList<Ammunition> ammunition, String size) {
         ArrayList<Ammunition> result = new ArrayList<>();
         for (Ammunition a : ammunition) {

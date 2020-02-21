@@ -8,6 +8,13 @@ import main.java.view.TextConstant;
 
 import static main.java.view.TextConstant.*;
 
+/**
+ * Created by Yuliia Borovets on 2020-02-21
+ *
+ * @author Yuliia Borovets
+ * @version 1.0
+ */
+
 public enum AmmunitionEnum {
 
     ARMOR1(new Armor(TextConstant.ARMOR1, 23, 12, ARMOR_TYPE_1, SIZE_S, 32) {

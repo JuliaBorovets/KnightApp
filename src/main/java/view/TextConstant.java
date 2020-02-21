@@ -1,8 +1,17 @@
 package main.java.view;
 
 import main.java.controller.Language;
+
 import java.util.ResourceBundle;
+
 import static main.java.view.View.BUNDLE_NAME;
+
+/**
+ * Created by Yuliia Borovets on 2020-02-21
+ *
+ * @author Yuliia Borovets
+ * @version 1.0
+ */
 
 public interface TextConstant {
 
@@ -11,7 +20,7 @@ public interface TextConstant {
     String INPUT_MIN = bundle.getString("input.string.writeMin");
     String INPUT_MAX = bundle.getString("input.string.writeMax");
     String INPUT_ERROR = "input.string.error";
-    String END_GAME = "input.string.end";
+    String END_PROGRAM = "input.string.end";
     String SIZE_S = bundle.getString("ammunition.size.s");
     String SIZE_M = bundle.getString("ammunition.size.m");
     String SIZE_L = bundle.getString("ammunition.size.l");
