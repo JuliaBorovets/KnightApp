@@ -13,6 +13,14 @@ import java.util.Scanner;
 
 import static main.java.view.TextConstant.*;
 
+/**
+ * Testing Model class
+ * Created by Yuliia Borovets on 2020-02-21
+ *
+ * @author Yuliia Borovets
+ * @version 1.0
+ */
+
 public class ModelTest {
 
     Model model;
@@ -22,17 +30,14 @@ public class ModelTest {
 
     @Before
     public void before() {
-
         model = new Model();
         view = new View();
         controller = new Controller(model, view);
         sc = new Scanner(System.in);
-
     }
 
     @Test
     public void sort() {
-
         boolean isSorted = false;
         ArrayList<Ammunition> ammunition = model.getAmmunition();
         ammunition = model.sort(ammunition);
@@ -44,19 +49,17 @@ public class ModelTest {
 
     @Test
     public void getFromWrongDiapason() {
-
         ArrayList<Ammunition> ammunition = model.getAmmunition();
-        ammunition = model.getFromDiapason(ammunition, -10, -1);
+        ammunition = model.getFromRange(ammunition, -10, -1);
         int afterSize = ammunition.size();
         Assert.assertEquals(0, afterSize);
     }
 
     @Test
     public void getFromDiapason() {
-
         ArrayList<Ammunition> ammunition = model.getAmmunition();
         int preSize = ammunition.size();
-        ammunition = model.getFromDiapason(ammunition, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        ammunition = model.getFromRange(ammunition, Integer.MIN_VALUE, Integer.MAX_VALUE);
         int afterSize = ammunition.size();
         Assert.assertEquals(preSize, afterSize);
 
@@ -64,7 +67,6 @@ public class ModelTest {
 
     @Test
     public void chooseSizeS() {
-
         int counterS = 0;
         ArrayList<Ammunition> ammunition = model.getAmmunition();
         for (Ammunition a : ammunition) {
@@ -79,7 +81,6 @@ public class ModelTest {
 
     @Test
     public void chooseSizeM() {
-
         int counterM = 0;
         ArrayList<Ammunition> ammunition = model.getAmmunition();
         for (Ammunition a : ammunition) {
@@ -94,7 +95,6 @@ public class ModelTest {
 
     @Test
     public void chooseSizeL() {
-        
         int counterL = 0;
         ArrayList<Ammunition> ammunition = model.getAmmunition();
         for (Ammunition a : ammunition) {

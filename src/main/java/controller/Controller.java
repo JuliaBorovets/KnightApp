@@ -10,11 +10,20 @@ import java.util.Scanner;
 import static main.java.controller.RegexContainer.REGEX_NUMBER;
 import static main.java.view.TextConstant.*;
 
+/**
+ * Created by Yuliia Borovets on 2020-02-21
+ * Main Controller class
+ *
+ * @author Yuliia Borovets
+ **/
+
 public class Controller {
+
 
     private Model model;
     private View view;
     public static Scanner sc;
+
 
     public Controller(Model model, View view) {
         this.model = model;
@@ -28,6 +37,12 @@ public class Controller {
         processMenu(sc);
     }
 
+    /**
+     * Сhecks user input
+     *
+     * @param sc - scanner
+     */
+
     public int inputValueWithScanner(Scanner sc) {
         int res;
         while (!(sc.hasNextInt() && Integer.toString(res = sc.nextInt()).matches(REGEX_NUMBER))) {
@@ -37,6 +52,11 @@ public class Controller {
         return res;
     }
 
+    /**
+     * Method to check value to choose language
+     *
+     * @param sc - scanner
+     */
     public int inputLanguageWithScanner(Scanner sc) {
         while (!(sc.hasNextInt())) {
             sc.next();
@@ -44,6 +64,11 @@ public class Controller {
         return sc.nextInt();
     }
 
+    /**
+     * Choosing language
+     *
+     * @param sc - scanner
+     */
     public void chooseLanguage(Scanner sc) {
         Language language;
         for (Language option : Language.values()) {
@@ -53,6 +78,11 @@ public class Controller {
         view.setLocalization(language);
     }
 
+    /**
+     * Performs operations depending on the user input
+     *
+     * @param sc - scanner
+     */
     public void processMenu(Scanner sc) {
         boolean exit = false;
         int num;
@@ -81,7 +111,7 @@ public class Controller {
                     int min = inputValueWithScanner(sc);
                     view.printMessage(INPUT_MAX);
                     int max = inputValueWithScanner(sc);
-                    amm = model.getFromDiapason(amm, min, max);
+                    amm = model.getFromRange(amm, min, max);
                     view.printAmmunition(amm);
                     break;
                 case 5:
@@ -101,7 +131,7 @@ public class Controller {
                     amm = model.getAmmunition();
                     break;
                 case 7:
-                    view.printEndOfGame();
+                    view.printEndOfProgram();
                     exit = true;
                     break;
             }

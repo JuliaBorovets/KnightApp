@@ -1,5 +1,10 @@
 package main.java.controller;
 
+/**
+ * @author Yuliia Borovets
+ * @version 1.0
+ */
+
 public interface RegexContainer {
     String REGEX_NUMBER = "[0-9]*";
     String REGEX_HELMET = "HELMET.";

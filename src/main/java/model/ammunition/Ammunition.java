@@ -1,10 +1,20 @@
 package main.java.model.ammunition;
 
+/**
+ * Created by Yuliia Borovets on 2020-02-21
+ *
+ * @author Yuliia Borovets
+ * @version 1.0
+ */
+
 public abstract class Ammunition {
 
     private String name;
+
     private double weight;
+
     private double cost;
+
     private String size;
 
     public Ammunition(String name, double weight, double cost, String size) {
@@ -29,18 +39,5 @@ public abstract class Ammunition {
     public String getSize() {
         return size;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
 
 }

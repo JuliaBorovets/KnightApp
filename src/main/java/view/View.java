@@ -4,33 +4,54 @@ import main.java.controller.Language;
 import main.java.model.ammunition.Ammunition;
 
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 import static main.java.view.TextConstant.*;
 
+/**
+ * Main View class
+ * <p>
+ * Created by Yuliia on 21.02.2020.
+ *
+ * @author Yuliia Borovets
+ **/
+
 public class View {
 
+    /**
+     * Name to the bundle to search
+     */
     static String BUNDLE_NAME = "text";
+
+    /**
+     * Current language. Default - ukrainian
+     */
     static Language currLanguage = Language.UKRAINIAN_LANG;
+
     public ResourceBundle bundle;
 
     public View() {
         currLanguage = Language.ENGLISH_LANG;
     }
 
-
     public void setLocalization(Language language) {
         currLanguage = language;
         bundle = ResourceBundle.getBundle(BUNDLE_NAME, Language.determineLocale(language));
     }
 
+    /**
+     * Prints menu
+     */
     public void printBaseMenu() {
         printMessage(bundle.getString(INPUT_STRING_DATA));
     }
 
-    public void printEndOfGame() {
-        printMessage(bundle.getString(END_GAME));
+    /**
+     * Prints about the end of the program
+     */
+
+    public void printEndOfProgram() {
+        printMessage(bundle.getString(END_PROGRAM));
     }
 
     public void printMessage(String string) {
@@ -49,14 +70,19 @@ public class View {
         printMessage(concatenationString(message));
     }
 
-    public void printStringInput(String message) {
-        printMessage(concatenationString(bundle.getString(INPUT_STRING_DATA), bundle.getString(message)));
-    }
+    /**
+     * Prints about incorrect input
+     */
 
     public void printWrongStringInput() {
         printMessage(concatenationString(bundle.getString(INPUT_ERROR), bundle.getString(INPUT_STRING_DATA)));
     }
 
+    /**
+     * Prints Ammunition
+     *
+     * @param result - ArrayList of Ammunition
+     */
     public void printAmmunition(ArrayList<Ammunition> result) {
         for (Ammunition a : result) {
             System.out.println(a);
