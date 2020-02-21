@@ -7,6 +7,7 @@ import main.java.view.View;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static main.java.controller.RegexContainer.REGEX_NUMBER;
 import static main.java.view.TextConstant.*;
 
 public class Controller {
@@ -21,14 +22,24 @@ public class Controller {
     }
 
     public void processUser() {
+
         sc = new Scanner(System.in);
         chooseLanguage(sc);
         processMenu(sc);
     }
 
     public int inputValueWithScanner(Scanner sc) {
-        while (!sc.hasNextInt() && (sc.nextInt() < 1 || sc.nextInt() > 6)) {
+        int res;
+        while (!(sc.hasNextInt() && Integer.toString(res = sc.nextInt()).matches(REGEX_NUMBER))) {
             view.printWrongStringInput();
+            sc.next();
+        }
+        return res;
+    }
+
+    public int inputLanguageWithScanner(Scanner sc) {
+        while (!(sc.hasNextInt())) {
+            sc.next();
         }
         return sc.nextInt();
     }
@@ -38,7 +49,7 @@ public class Controller {
         for (Language option : Language.values()) {
             view.printMessage(option.getUserPrompt());
         }
-        language = (sc.nextInt() == 1) ? Language.UKRAINIAN_LANG : Language.ENGLISH_LANG;
+        language = (inputLanguageWithScanner(sc) == 1) ? Language.UKRAINIAN_LANG : Language.ENGLISH_LANG;
         view.setLocalization(language);
     }
 
@@ -74,7 +85,6 @@ public class Controller {
                     view.printAmmunition(amm);
                     break;
                 case 5:
-
                     view.printMessage(CHOOSE_SIZE);
                     int size = inputValueWithScanner(sc);
 
@@ -84,7 +94,7 @@ public class Controller {
                         amm = model.chooseSize(amm, SIZE_M);
                     } else if (size == 3) {
                         amm = model.chooseSize(amm, SIZE_L);
-                    } else view.printMessage(INPUT_ERROR);
+                    } else view.printWrongStringInput();
                     view.printAmmunition(amm);
                     break;
                 case 6:
@@ -94,10 +104,7 @@ public class Controller {
                     view.printEndOfGame();
                     exit = true;
                     break;
-
             }
         }
-
     }
-
 }
