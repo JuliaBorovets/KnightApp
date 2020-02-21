@@ -1,4 +1,4 @@
-package main.java.controller;
+package main.java.model.ammunition;
 
 import main.java.model.ammunition.Armor;
 import main.java.model.ammunition.Helmet;

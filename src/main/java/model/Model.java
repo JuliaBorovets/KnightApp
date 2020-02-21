@@ -1,6 +1,6 @@
 package main.java.model;
 
-import main.java.controller.AmmunitionEnum;
+import main.java.model.ammunition.AmmunitionEnum;
 import main.java.controller.RegexContainer;
 import main.java.model.ammunition.Ammunition;
 
