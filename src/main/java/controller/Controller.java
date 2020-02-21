@@ -74,9 +74,27 @@ public class Controller {
                     view.printAmmunition(amm);
                     break;
                 case 5:
+
+                    view.printMessage(CHOOSE_SIZE);
+                    int size = inputValueWithScanner(sc);
+
+                    if (size == 1) {
+                        amm = model.chooseSize(amm, SIZE_S);
+                    } else if (size == 2) {
+                        amm = model.chooseSize(amm, SIZE_M);
+                    } else if (size == 3) {
+                        amm = model.chooseSize(amm, SIZE_L);
+                    } else view.printMessage(INPUT_ERROR);
+                    view.printAmmunition(amm);
+                    break;
+                case 6:
+                    amm = model.getAmmunition();
+                    break;
+                case 7:
                     view.printEndOfGame();
                     exit = true;
                     break;
+
             }
         }
 

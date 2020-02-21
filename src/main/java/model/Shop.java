@@ -15,4 +15,6 @@ public interface Shop {
 
     ArrayList<Ammunition> getFromDiapason(ArrayList<Ammunition> ammunition, double min, double max);
 
+    ArrayList<Ammunition> chooseSize(ArrayList<Ammunition> ammunition, String size);
+
 }

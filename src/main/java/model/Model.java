@@ -3,7 +3,6 @@ package main.java.model;
 import main.java.controller.AmmunitionEnum;
 import main.java.controller.RegexContainer;
 import main.java.model.ammunition.Ammunition;
-
 import java.util.*;
 
 public class Model implements Shop {
@@ -60,6 +59,17 @@ public class Model implements Shop {
         ArrayList<Ammunition> result = new ArrayList<>();
         for (Ammunition a : ammunition) {
             if (a.getCost() >= 0 && a.getCost() >= min && a.getCost() <= max) {
+                result.add(a);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public ArrayList<Ammunition> chooseSize(ArrayList<Ammunition> ammunition, String size) {
+        ArrayList<Ammunition> result = new ArrayList<>();
+        for (Ammunition a : ammunition) {
+            if (a.getSize().equals(size)) {
                 result.add(a);
             }
         }

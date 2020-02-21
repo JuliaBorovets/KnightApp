@@ -29,7 +29,6 @@ public class View {
         printMessage(bundle.getString(INPUT_STRING_DATA));
     }
 
-
     public void printEndOfGame() {
         printMessage(bundle.getString(END_GAME));
     }
