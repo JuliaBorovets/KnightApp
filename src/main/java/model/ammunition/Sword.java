@@ -5,8 +5,8 @@ public class Sword extends Ammunition {
     private final boolean twoHanded;
     private int resistance;
 
-    public Sword(String name, double weight, double cost, boolean twoHanded, int resistance) {
-        super(name, weight, cost);
+    public Sword(String name, double weight, double cost, String size, boolean twoHanded, int resistance) {
+        super(name, weight, cost, size);
         this.twoHanded = twoHanded;
         this.resistance = resistance;
     }

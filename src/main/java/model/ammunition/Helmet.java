@@ -4,13 +4,11 @@ public class Helmet extends Ammunition {
 
     private final boolean isCloseHelmet;
     private int resistance;
-    private String size;
 
-    public Helmet(String name, double weight, double cost, boolean isCloseHelmet, int resistance, String size) {
-        super(name, weight, cost);
+    public Helmet(String name, double weight, double cost, String size, boolean isCloseHelmet, int resistance) {
+        super(name, weight, cost, size);
         this.isCloseHelmet = isCloseHelmet;
         this.resistance = resistance;
-        this.size = size;
     }
 
     public int getResistance() {
@@ -21,8 +19,5 @@ public class Helmet extends Ammunition {
         return isCloseHelmet;
     }
 
-    public String getSize() {
-        return size;
-    }
 
 }

@@ -5,11 +5,13 @@ public abstract class Ammunition {
     private String name;
     private double weight;
     private double cost;
+    private String size;
 
-    public Ammunition(String name, double weight, double cost) {
+    public Ammunition(String name, double weight, double cost, String size) {
         this.name = name;
         this.weight = weight;
         this.cost = cost;
+        this.size = size;
     }
 
     public String getName() {
@@ -22,6 +24,10 @@ public abstract class Ammunition {
 
     public double getCost() {
         return cost;
+    }
+
+    public String getSize() {
+        return size;
     }
 
     public void setName(String name) {
