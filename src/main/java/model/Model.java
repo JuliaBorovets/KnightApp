@@ -16,28 +16,6 @@ import java.util.ArrayList;
 public class Model {
 
     /**
-     * Makes an ArrayList of Ammunition from Enum values
-     *
-     * @return ArrayList of Ammunition
-     */
-
-    public ArrayList<Ammunition> getAmmunition() {
-        ArrayList<Ammunition> amm = new ArrayList<>();
-        for (AmmunitionEnum el : AmmunitionEnum.values()) {
-            if (el.name().matches(RegexContainer.REGEX_HELMET)) {
-                amm.add(el.getHelmet());
-            } else if (el.name().matches(RegexContainer.REGEX_SWORD)) {
-                amm.add(el.getSword());
-            } else if (el.name().matches(RegexContainer.REGEX_SHIELD)) {
-                amm.add(el.getShield());
-            } else {
-                amm.add(el.getArmor());
-            }
-        }
-        return amm;
-    }
-
-    /**
      * Sort ArrayList of Ammunition  by "Bubble" method
      *
      * @param ammunition - list if ammunition
@@ -69,8 +47,8 @@ public class Model {
      * @param ammunition - ArrayList of ammunition
      * @return total cost
      */
-    public double calculateTotalPrice(ArrayList<Ammunition> ammunition) {
-        double result = 0.0;
+    public int calculateTotalPrice(ArrayList<Ammunition> ammunition) {
+        int result = 0;
         for (Ammunition a : ammunition) {
             result += a.getCost();
         }
@@ -96,7 +74,6 @@ public class Model {
         return result;
     }
 
-
     /**
      * Method to filter ammunition by size
      *
@@ -112,5 +89,28 @@ public class Model {
             }
         }
         return result;
+    }
+
+
+    /**
+     * Makes an ArrayList of Ammunition from Enum values
+     *
+     * @return ArrayList of Ammunition
+     */
+
+    public ArrayList<Ammunition> getAmmunition() {
+        ArrayList<Ammunition> amm = new ArrayList<>();
+        for (AmmunitionEnum el : AmmunitionEnum.values()) {
+            if (el.name().matches(RegexContainer.REGEX_HELMET)) {
+                amm.add(el.getHelmet());
+            } else if (el.name().matches(RegexContainer.REGEX_SWORD)) {
+                amm.add(el.getSword());
+            } else if (el.name().matches(RegexContainer.REGEX_SHIELD)) {
+                amm.add(el.getShield());
+            } else {
+                amm.add(el.getArmor());
+            }
+        }
+        return amm;
     }
 }
