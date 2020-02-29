@@ -12,7 +12,7 @@ public class Armor extends Ammunition {
     private String type;
     private int resistance;
 
-    public Armor(String name, double weight, double cost, String size, String type, int resistance) {
+    public Armor(String name, double weight, int cost, String size, String type, int resistance) {
         super(name, weight, cost, size);
         this.type = type;
         this.resistance = resistance;
@@ -20,6 +20,12 @@ public class Armor extends Ammunition {
 
     public String getType() {
         return type;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + ": " + "weight=" + getWeight() + ", cost=" + getCost() + ", size=" + getSize() + ", " +
+                "type='" + type + '\'' + ", resistance=" + resistance;
     }
 
     public int getResistance() {

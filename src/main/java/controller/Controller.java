@@ -103,8 +103,8 @@ public class Controller {
                     view.printAmmunition(amm);
                     break;
                 case 3:
-                    double totalPrice = model.calculateTotalPrice(amm);
-                    view.printMessage(TOTAL_PRICE, Double.toString(totalPrice));
+                    int totalPrice = model.calculateTotalPrice(amm);
+                    view.printMessage(TOTAL_PRICE, Integer.toString(totalPrice));
                     break;
                 case 4:
                     view.printMessage(INPUT_MIN);

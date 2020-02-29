@@ -1,9 +1,5 @@
 package main.java.model.ammunition;
 
-import main.java.model.ammunition.Armor;
-import main.java.model.ammunition.Helmet;
-import main.java.model.ammunition.Shield;
-import main.java.model.ammunition.Sword;
 import main.java.view.TextConstant;
 
 import static main.java.view.TextConstant.*;
@@ -17,109 +13,20 @@ import static main.java.view.TextConstant.*;
 
 public enum AmmunitionEnum {
 
-    ARMOR1(new Armor(TextConstant.ARMOR1, 23, 12, ARMOR_TYPE_1, SIZE_S, 32) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + TYPE + getType()
-                    + ", " + RESISTANCE + getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
+    ARMOR1(new Armor(TextConstant.ARMOR1, 23, 12, ARMOR_TYPE_1, SIZE_S, 32)),
+    ARMOR2(new Armor(TextConstant.ARMOR2, 73, 121, ARMOR_TYPE_2, SIZE_M, 32)),
+    ARMOR3(new Armor(TextConstant.ARMOR3, 63, 111, ARMOR_TYPE_2, SIZE_L, 32)),
+    HELMET1(new Helmet(TextConstant.HELMET1, 45, 23, SIZE_S, true, 2)),
+    HELMET2(new Helmet(TextConstant.HELMET2, 81, 310, SIZE_M, false, 6)),
+    HELMET3(new Helmet(TextConstant.HELMET3, 81, 310, SIZE_L, false, 9)),
 
-    ARMOR2(new Armor(TextConstant.ARMOR2, 73, 121, ARMOR_TYPE_2, SIZE_M, 32) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + TYPE + getType()
-                    + ", " + RESISTANCE + getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
-    ARMOR3(new Armor(TextConstant.ARMOR3, 63, 111, ARMOR_TYPE_2, SIZE_L, 32) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + TYPE + getType()
-                    + ", " + RESISTANCE + getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
+    SHIELD1(new Shield(TextConstant.SHIELD1, 28, 3, SIZE_S, 1)),
 
-    HELMET1(new Helmet(TextConstant.HELMET1, 45, 23, SIZE_S, true, 2) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + IS_CLOSED +
-                    isCloseHelmet() + ", " + RESISTANCE + getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
-
-    HELMET2(new Helmet(TextConstant.HELMET2, 81, 310, SIZE_M, false, 6) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + IS_CLOSED +
-                    isCloseHelmet() + ", " + RESISTANCE + getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
-
-    HELMET3(new Helmet(TextConstant.HELMET3, 81, 310, SIZE_L, false, 9) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + IS_CLOSED +
-                    isCloseHelmet() + ", " + RESISTANCE + getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
-
-    SHIELD1(new Shield(TextConstant.SHIELD1, 28, 3, SIZE_S, 1) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + RESISTANCE +
-                    getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
-
-    SHIELD2(new Shield(TextConstant.SHIELD2, 52, 271, SIZE_M, 6) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + RESISTANCE +
-                    getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
-    SHIELD3(new Shield(TextConstant.SHIELD3, 62, 271, SIZE_L, 1) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + RESISTANCE +
-                    getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
-    SWORD1(new Sword(TextConstant.SWORD1, 2, 3, SIZE_S, true, 24) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + TWO_HANDED +
-                    isTwoHanded() + ", " + RESISTANCE + getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
-
-    SWORD2(new Sword(TextConstant.SWORD2, 1, 87, SIZE_M, true, 2) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + TWO_HANDED +
-                    isTwoHanded() + ", " + RESISTANCE + getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    ),
-    SWORD3(new Sword(TextConstant.SWORD3, 7, 87, SIZE_L, false, 67) {
-        @Override
-        public String toString() {
-            return getName() + " : " + WEIGHT + getWeight() + ", " + PRICE + getCost() + ", " + TWO_HANDED +
-                    isTwoHanded() + ", " + RESISTANCE + getResistance() + ", " + SIZE + getSize();
-        }
-    }
-    );
+    SHIELD2(new Shield(TextConstant.SHIELD2, 52, 271, SIZE_M, 6)),
+    SHIELD3(new Shield(TextConstant.SHIELD3, 62, 271, SIZE_L, 1)),
+    SWORD1(new Sword(TextConstant.SWORD1, 2, 3, SIZE_S, true, 24)),
+    SWORD2(new Sword(TextConstant.SWORD2, 1, 87, SIZE_M, true, 2)),
+    SWORD3(new Sword(TextConstant.SWORD3, 7, 87, SIZE_L, false, 67));
 
     Armor armor;
     Helmet helmet;

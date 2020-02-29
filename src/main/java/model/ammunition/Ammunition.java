@@ -13,11 +13,11 @@ public abstract class Ammunition {
 
     private double weight;
 
-    private double cost;
+    private int cost;
 
     private String size;
 
-    public Ammunition(String name, double weight, double cost, String size) {
+    public Ammunition(String name, double weight, int cost, String size) {
         this.name = name;
         this.weight = weight;
         this.cost = cost;
@@ -32,7 +32,7 @@ public abstract class Ammunition {
         return weight;
     }
 
-    public double getCost() {
+    public int getCost() {
         return cost;
     }
 
@@ -40,4 +40,8 @@ public abstract class Ammunition {
         return size;
     }
 
+    @Override
+    public String toString() {
+        return name + ": " + "weight=" + weight + ", cost=" + cost + ", size=" + size + ", ";
+    }
 }

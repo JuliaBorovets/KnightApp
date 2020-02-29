@@ -14,10 +14,16 @@ public class Sword extends Ammunition {
 
     private int resistance;
 
-    public Sword(String name, double weight, double cost, String size, boolean twoHanded, int resistance) {
+    public Sword(String name, double weight, int cost, String size, boolean twoHanded, int resistance) {
         super(name, weight, cost, size);
         this.twoHanded = twoHanded;
         this.resistance = resistance;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + ": " + "weight=" + getWeight() + ", cost=" + getCost() + ", size=" + getSize() + ", "
+                + "twoHanded=" + twoHanded + ", resistance=" + resistance;
     }
 
     public boolean isTwoHanded() {
